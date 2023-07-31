@@ -1,0 +1,236 @@
+<div class="container-fluid mx-auto my-auto">
+
+  <div class="row mb-4" *ngIf="isLoggedIn && !showJobForm">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 *ngIf="isLoggedIn" class="text-center">WELCOME TO JOBPORTAL {{this.username}}!</h1>
+        <div>
+          <button class="btn btn-secondary mr-3" (click)="logout()">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </button>
+          <button class="btn btn-primary" *ngIf="usertype === 'admin' && isLoggedIn" routerLink="/addjob">
+            <i class="bi bi-plus-lg"></i> Add Job
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="isLoggedIn && !showJobForm">
+    <div class="col-md-6 mb-4" *ngFor="let job of jobs">
+      <div class="card h-100">
+        <div class="card-body">
+          <p class="card-title"><i class="bi bi-building-fill-check"></i> <strong>Company Name:</strong> {{ job.company }}</p>
+          <h5 class="card-title"><strong>Position:</strong> {{ job.title }}</h5>
+          <h6 class="card-title mb-2 text-muted"><strong>Location:</strong> {{ job.location }}</h6>
+          <p class="card-text"><strong>Job Description:</strong> {{ job.description }}</p>
+          <p class="card-title"><strong>Experience:</strong> {{job.experience}}</p>
+          <p class="card-title"><strong>Job Type:</strong> {{ job.jobtype }}</p>
+        </div>
+        <div class="card-footer text-left">
+          <a class="btn btn-primary text-light mx-1" href="//{{job.applylink}}" target="_blank" rel="noopener">
+            <i class="bi bi-file-earmark-arrow-down"></i> Apply Now
+          </a>
+          <a class="btn btn-primary text-light mx-1" href="//{{job.applylink}}" target="_blank" rel="noopener">
+            <i class="bi bi-envelope"></i> Contact Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+----------------full 
+
+<div class="container-fluid mx-auto my-auto">
+
+  <div class="row mb-4" *ngIf="isLoggedIn && !showJobForm">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 *ngIf="isLoggedIn" class="text-center">WELCOME TO JOBPORTAL {{this.username}}!</h1>
+        <div>
+          <button class="btn btn-secondary mr-3" (click)="logout()">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </button>
+          <button class="btn btn-primary" *ngIf="usertype === 'admin' && isLoggedIn" routerLink="/addjob">
+            <i class="bi bi-plus-lg"></i> Add Job
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="isLoggedIn && !showJobForm">
+    <div class="col-md-6 mb-4" *ngFor="let job of jobs">
+      <div class="card h-100">
+        <div class="card-body">
+          <p class="card-title"><i class="bi bi-building-fill-check"></i> <strong>Company Name:</strong> {{ job.company }}</p>
+          <h5 class="card-title"><strong>Position:</strong> {{ job.title }}</h5>
+          <h6 class="card-title mb-2 text-muted"><strong>Location:</strong> {{ job.location }}</h6>
+          <p class="card-text"><strong>Job Description:</strong> {{ job.description }}</p>
+          <p class="card-title"><strong>Experience:</strong> {{job.experience}}</p>
+          <p class="card-title"><strong>Job Type:</strong> {{ job.jobtype }}</p>
+        </div>
+        <div class="card-footer text-left">
+          <a class="btn btn-primary text-light mx-1" href="//{{job.applylink}}" target="_blank" rel="noopener">
+            <i class="bi bi-file-earmark-arrow-down"></i> Apply Now
+          </a>
+          <a class="btn btn-primary text-light mx-1" href="//{{job.applylink}}" target="_blank" rel="noopener">
+            <i class="bi bi-envelope"></i> Contact Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Job Advertising</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body *ngIf="isLoggedIn && !showJobForm">
+    <!-- Navigation bar -->
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 *ngIf="isLoggedIn" class="text-center">WELCOME TO JOBPORTAL {{this.username}}!</h1>
+          <div>
+            <button class="btn btn-secondary mr-3" (click)="logout()">
+              <i class="bi bi-box-arrow-right"></i> Logout
+            </button>
+            <button class="btn btn-primary" *ngIf="usertype === 'admin' && isLoggedIn" routerLink="/addjob">
+              <i class="bi bi-plus-lg"></i> Add Job
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Join Our Team!</h1>
+            <p class="lead">We're hiring for multiple positions in our growing company. If you're passionate about your work and want to be part of a dynamic team, we'd love to hear from you!</p>
+            <hr class="my-4" />
+            <p>Check out our current job openings below and apply today.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">View Jobs</a>
+        </div>
+    </div>
+
+    <!-- Job Listings -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Developer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Full-time</h6>
+                        <p class="card-text">We're looking for an experienced web developer to join our team. You'll be responsible for developing and maintaining our web applications and ensuring they meet our high standards of quality and performance.</p>
+                        <a href="#" class="card-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Marketing Manager</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Full-time</h6>
+
+                        <p class="card-text">We're seeking a skilled Marketing Manager to oversee all marketing initiatives for our company. You'll be responsible for developing and executing marketing campaigns, managing our social media presence, and analyzing the effectiveness
+                            of our marketing efforts.</p>
+                        <a href="#" class="card-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Software Engineer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Full-time</h6>
+                        <p class="card-text">We're looking for a talented Software Engineer to join our team. You'll be responsible for designing, developing, and maintaining our software applications, as well as working closely with our product team to ensure our products
+                            meet our customers' needs.</p>
+                        <a href="#" class="card-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Analyst</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Full-time</h6>
+                        <p class="card-text">We're seeking a talented Data Analyst to join our team. You'll be responsible for collecting, analyzing, and interpreting large data sets to help drive key business decisions and improve our overall performance.</p>
+                        <a href="#" class="card-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Job Advertising &copy; 2023</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+export interface Job {
+  id: number;
+  title: string;
+  description: string;
+  location: string;
+  salary: number;
+  applylink:string;
+  company: string;
+  jobtype:string;
+  experience:string;
+  category: string; // add a category property
+}
+
+
+
+  updateLabel(input: HTMLInputElement): void {
+    const label = input.nextElementSibling as HTMLLabelElement;
+    const file = input.files?.[0]; // add a null check using the optional chaining operator
+    if (file) {
+      label.innerText = file.name;
+      this.resume = file;
+    }
+  }
